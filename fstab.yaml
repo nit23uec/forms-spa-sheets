@@ -1,5 +1,5 @@
 mountpoints:
-  /: https://docs.google.com/spreadsheets/d/1BsbASF9HQJ378yX0QYYlwj22Mnk_mUbdMdz96Asjxpw
+  /: https://drive.google.com/drive/folders/1tJn3e-z-PWV4NV_Q5vUU27K0aZxXwcO3
 
 folders:
   /: /dist/index.html
