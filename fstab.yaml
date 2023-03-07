@@ -3,5 +3,3 @@ mountpoints:
 
 folders:
   /: /dist/index.html
-  /static: /dist/static
-  /logo192.png: /dist/logo192.png
