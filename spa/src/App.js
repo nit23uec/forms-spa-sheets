@@ -1,14 +1,11 @@
 import './App.css';
-import TextField from './components/TextField';
-import useSheets from './api/useSheets.js';
+import Form from './components/Form';
 
 function App() {
-  const itemID = "urn:fnkconnection:afb.json:default:Name:firstName";
-  const { data, errorMessage } = useSheets(itemID);
-  console.log('sheet data', data);
+  const itemID = "urn:fnkconnection:afb.json:default";
   return (
     <div className="App">
-       <TextField></TextField>
+       <Form itemID={itemID}></Form>
     </div>
   );
 }
