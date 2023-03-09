@@ -1,10 +1,14 @@
-function TextField() {
+function TextField(props) {
     return (
-        <div>
-            <label htmlFor="name">Name (4 to 8 characters):</label>
-            <input type="text" id="name" name="name" required minLength="4" maxLength="8" size="10"></input>
+        <div itemtype="urn:fnk:type/component" itemid={generateItemId(props['Name'])}>
+            <label itemprop="Title" itemtype="text" htmlFor="name">{props['Title']}</label>
+            <input type={props['Type']} id="name" name={props['Name']} required minLength="4" maxLength="8" size="10"></input>
         </div>
     );
+}
+
+function generateItemId(name) {
+    return "urn:fnkconnection:afb.json:default:Name:" + name;
 }
 
 export default TextField;

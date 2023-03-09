@@ -4,10 +4,12 @@ function Form(props) {
     const { data, errorMessage } = useSheets(props.itemID);
     console.log('sheet data', data);
     return (
-        <form>
-            <TextField></TextField>
-            <input type="submit" value="Submit"></input>
-        </form>
+        <div itemtype="urn:fnk:type/form" itemid={props.itemID} itemscope>
+            <form>
+                <TextField data={data[0]}></TextField>
+                <input type="submit" value="Submit"></input>
+            </form>
+        </div>
     );
 }
 
