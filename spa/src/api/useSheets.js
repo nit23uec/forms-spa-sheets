@@ -29,7 +29,7 @@ export default function useSheets(uri) {
       if (sheet) {
         url += `?sheet=${sheet}`;
       }
-      let json = null;
+      let json = cache.current[url];
       if (!json) {
         const res = await fetch(url);
         json = await res.json();
