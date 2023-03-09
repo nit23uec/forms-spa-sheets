@@ -6,7 +6,7 @@ function Form(props) {
     return (
         <div itemtype="urn:fnk:type/form" itemid={props.itemID} itemscope>
             <form>
-                <TextField data={data[0]}></TextField>
+                <TextField {...data[0]}></TextField>
                 <input type="submit" value="Submit"></input>
             </form>
         </div>
