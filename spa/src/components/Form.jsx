@@ -5,7 +5,7 @@ function Form(props) {
     console.log('sheet data', data);
     if (data) {
         return (
-            <div itemtype="urn:fnk:type/form" itemid={props.itemID} itemscope>
+            <div itemType="urn:fnk:type/form" itemID={props.itemID} itemScope>
                 <form>
                     <TextField {...data[0]}></TextField>
                     <input type="submit" value="Submit"></input>

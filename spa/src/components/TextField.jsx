@@ -1,7 +1,7 @@
 function TextField(props) {
     return (
-        <div itemtype="urn:fnk:type/component" itemid={generateItemId(props['Name'])} itemscope>
-            <label itemprop="Title" itemtype="text" htmlFor="name">{props['Title']}</label>
+        <div itemType="urn:fnk:type/component" itemID={generateItemId(props['Name'])} itemScope>
+            <label itemProp="Title" itemType="text" htmlFor="name">{props['Title']}</label>
             <input type={props['Type']} id="name" name={props['Name']} required minLength="4" maxLength="8" size="10"></input>
         </div>
     );
