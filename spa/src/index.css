@@ -5,20 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.form-text-input{
-  width:100%;
-  height: 100%;
-}
-
-div.form-text-input > label{
-  width:100%;
-  height: 100%;
-  display: block;
 }
