@@ -8,7 +8,7 @@ function TextField(props) {
 }
 
 function generateItemId(name) {
-    return "urn:fnkconnection:afb.json:default:Name:" + name;
+    return "urn:fnkconnection:/afb.json:default:Name:" + name;
 }
 
 export default TextField;
