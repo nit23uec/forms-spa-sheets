@@ -1,11 +1,10 @@
 import './App.css';
-import Form from './components/Form';
-
+import Wizard from './components/Wizard';
 function App() {
   const itemID = "urn:fnkconnection:/afb.json:default";
   return (
     <div className="App">
-       <Form itemID={itemID}></Form>
+       <Wizard itemID={itemID}></Wizard>
     </div>
   );
 }
