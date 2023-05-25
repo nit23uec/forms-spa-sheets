@@ -4,7 +4,9 @@ import Submit from "./Submit";
 
 function Wizard(props) {
     const [tab, setTab] = useState(1);
-
+    const urlParams = new URLSearchParams(window.location.search);
+    const formUrl = urlParams.get('formUrl');
+    const folder = urlParams.get('folder');
     return (
         <div>
             <div>
@@ -14,7 +16,7 @@ function Wizard(props) {
             </div>
             {tab == 1 ? (
             <div class="tab">
-                <iframe src="http://localhost:4502" width="800" height="1000"></iframe>
+                <iframe src={`https://localhost.corp.adobe.com:12400/canvas/${formUrl}?folder=${folder}`} width="2000" height="1000"></iframe>
             </div>) : (tab == 2 ? 
             <div>
                <Integrations></Integrations>
