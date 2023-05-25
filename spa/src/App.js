@@ -1,10 +1,16 @@
 import './App.css';
 import Wizard from './components/Wizard';
+import Integrations from "./components/Integrations";
+import Submit from "./components/Submit";
+
 function App() {
-  const itemID = "urn:fnkconnection:/afb.json:default";
   return (
     <div className="App">
-       <Wizard itemID={itemID}></Wizard>
+       <Wizard >
+          <iframe title="Editor" src="http://localhost:4502" width="1000" height="1000"></iframe>
+          <Integrations title="Integrations" />
+          <Submit title="Submit" />
+       </Wizard>
     </div>
   );
 }

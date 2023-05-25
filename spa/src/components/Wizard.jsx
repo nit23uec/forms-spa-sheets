@@ -1,26 +1,25 @@
 import { useState, React } from "react";
-import Integrations from "./Integrations";
-import Submit from "./Submit";
 
 function Wizard(props) {
-    const [tab, setTab] = useState(1);
-
+    const [tabNumber, setTab] = useState(0);
+    const {children, className} = props
     return (
-        <div>
-            <div>
-                <button onClick={() => setTab(1)}>Editor</button>
-                <button onClick={() => setTab(2)}>Integrations</button>
-                <button onClick={() => setTab(3)}>Submit</button>
+        <div className={(className ? className : '') + ' tabs'}>
+            <nav>
+                {children.map((child, index) => {
+                        const {title} = child.props
+                        return <button onClick={() => setTab(index)}
+                        className={tabNumber === index ? "active" : ''}>{title}</button>
+                })}
+            </nav>
+            <div className="tab-content">
+                {
+                    children.filter((child, index) => index === tabNumber)
+                        .map((child, index) => (<div className="tab">
+                            {child}
+                        </div>))
+                }
             </div>
-            {tab == 1 ? (
-            <div class="tab">
-                <iframe src="http://localhost:4502" width="800" height="1000"></iframe>
-            </div>) : (tab == 2 ? 
-            <div>
-               <Integrations></Integrations>
-            </div> : (tab === 3) ? <div>
-                <Submit></Submit>
-            </div> : '')}
         </div>
    );
 }
