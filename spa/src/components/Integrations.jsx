@@ -8,7 +8,7 @@ function Integrations(props) {
     return (<Wizard className="integrations">
         <Captcha title="Captcha" />
         <Sign title="Sign" />
-        <div title="Document of Record"></div>
+        <div title="Azure Blob Store"></div>
     </Wizard>)
 }
 

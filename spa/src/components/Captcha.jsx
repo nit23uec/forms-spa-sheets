@@ -1,10 +1,11 @@
 import { useState } from "react";
+import ChooseCloudConfig from './ChooseCloudConfig';
 
 function Captcha(props) {
     const [name, setName] = useState("");
     const [siteKey, setSiteKey] = useState("");
     const [secretKey, setSecretKey] = useState("");
-
+    const [create, setCreate] = useState(false)
     const setValue = function (e) {
         const name = e.target.name;
         const value = e.target.value;
@@ -17,8 +18,12 @@ function Captcha(props) {
         }
     }
 
-    return (
-            <form>
+    const chooser = (<div class="config-chooser-wrapper">
+        <ChooseCloudConfig type="captcha" />
+        <button type="button" onClick={() => setCreate(true)}>Create</button>
+    </div>)
+
+    return (create === false ? chooser : (<form>
                 <div className="field">
                     <label>Name</label>
                     <input type="text" name="name" value={name} onChange={setValue} />
@@ -34,8 +39,7 @@ function Captcha(props) {
                 <div className="field">
                     <button type="submit"> Submit </button>
                 </div>
-            </form>
-    );
+            </form>));
 }
 
 

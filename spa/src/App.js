@@ -2,18 +2,28 @@ import './App.css';
 import Wizard from './components/Wizard';
 import Integrations from "./components/Integrations";
 import Submit from "./components/Submit";
+import { SpreadsheetContext } from './components/SpreadsheetContext';
+import config from './config.json'
 
 function App() {
   const urlParams = new URLSearchParams(window.location.search);
   const formUrl = urlParams.get('formUrl');
   const folder = urlParams.get('folder');
+  const config = {
+    formUrl,
+    folder,
+    appURL
+  }
   return (
     <div className="App">
-       <Wizard >
-          <iframe title="Editor" src={`https://nitins-mbp-3.corp.adobe.com:12400/canvas/${formUrl}?folder=${folder}`} width="2000" height="1000"></iframe>
-          <Integrations title="Integrations" />
-          <Submit title="Submit" />
-       </Wizard>
+      <SpreadsheetContext.Provider value={config}>
+        <Wizard >
+            <UE>
+
+            <Integrations title="Integrations" folder={folder}/>
+            <div title="Document of Record" ></div>
+        </Wizard>
+       </SpreadsheetContext.Provider>
     </div>
   );
 }
