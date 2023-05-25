@@ -16,7 +16,7 @@ function Wizard(props) {
             </div>
             {tab == 1 ? (
             <div class="tab">
-                <iframe src={`https://localhost.corp.adobe.com:12400/canvas/${formUrl}?folder=${folder}`} width="2000" height="1000"></iframe>
+                <iframe src={`https://nitins-mbp-3.corp.adobe.com:12400/canvas/${formUrl}?folder=${folder}`} width="2000" height="1000"></iframe>
             </div>) : (tab == 2 ? 
             <div>
                <Integrations></Integrations>
