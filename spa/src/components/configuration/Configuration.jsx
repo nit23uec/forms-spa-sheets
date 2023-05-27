@@ -41,7 +41,7 @@ function Configuration(props) {
         console.log("Config", config);
         config.env = 'both';
 
-        await fetch(`http://localhost:8787/vault`,
+        await fetch(`https://franklin-submit-wrapper-fork.crispr-api.workers.dev/vault`,
          {
             method: 'POST',
             headers: {
@@ -50,9 +50,11 @@ function Configuration(props) {
             body: JSON.stringify({data: config, type: type, keys: configurations[type].keys})
         }) 
 
+        alert('Configuration Created')
         props.onClose();
         context.reloadConfig = !context.reloadConfig;
         setContext(context);
+        return;
     }
 
     return ( (<div className="form">
