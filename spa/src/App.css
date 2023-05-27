@@ -8,24 +8,29 @@
 .tabs {
   display: flex;
   flex-direction: column;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
 }
 
 .tabs nav {
   display: flex;
+  border-bottom: 2px solid gray;
 }
 
 .tabs nav button {
-  background: white;
+  background: #f1f1f1;
   border: 0;
   font-size: 18px;
-  padding: 14px 8px 0;
-  margin-bottom: 14px;
+  padding: 20px;
   cursor: pointer;
-  margin-right: 15px;
+  margin: 0;
+  border-radius: 0;
+  color: #000;
+  font-weight: bold;
 }
 
 .tabs .tab-content {
-  width: 100%;
+  padding: 25px;
 }
 
 .tabs .tab-content iframe {
@@ -39,11 +44,34 @@
 }
 
 .tabs nav button.active {
-  border-bottom: 1px solid #000;
+  background-color: #ccc;
 }
 
 .integrations.tabs {
   flex-direction: row;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 70%;
+  border-left: none;
+}
+
+.integration {
+  display: flex;
+}
+
+.integration .container {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 25px;
+}
+
+.integration .container .tabcontent {
+  padding: 25px;
+  width: 100%;
 }
 
 .integrations.tabs nav {
@@ -54,15 +82,119 @@
   padding: 18px 40px;
 }
 
-form .field {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 14px;
+.settings,
+.integrations,
+.form {
+  width: 50%;
+  margin: 0 auto;
 }
 
-form .field input {
+.field input {
   width: 100%;
   height: 40px;
   margin-top: 8px;
+}
+
+.field input[type=checkbox] {
+  width: auto;
+  height: auto;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button,
+input[type=button],
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.controls {
+  display: flex;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  width: 50%;
+}
+
+.modal-header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.cards {
+  display: flex;
+  margin: auto 0;
+  gap: 20px;
+  width: 80%;
+}
+
+.card {
+  box-shadow: 0 3px 10px 0 #aaa;
+  cursor: pointer;
+  width: 243px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  aspect-ratio: 16/9;
+  width: 100%;
+  transition: all;
+}
+
+.card-footer,
+.card-body {
+  padding: 10px;
+}
+
+
+.card h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card.selected {
+  box-shadow: 0 3px 10px 2px #444;
+}
+
+.card.card.selected img {
+  display: none;
+}
+
+.settings input[type='button'] {
+  float: right;
 }

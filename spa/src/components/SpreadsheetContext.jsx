@@ -1,4 +1,4 @@
 import { createContext } from 'react';
 
-export const SpreadsheetContext = createContext(1);
+export const SpreadsheetContext = createContext({});
 
