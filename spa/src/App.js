@@ -12,7 +12,7 @@ function App() {
   const config = {
     formUrl,
     folder,
-    appUrl: 'https://nitins-mbp-3.corp.adobe.com:12400',
+    appUrl: 'https://localhost.corp.adobe.com:12400',
     reloadConfig : false
   };
 
