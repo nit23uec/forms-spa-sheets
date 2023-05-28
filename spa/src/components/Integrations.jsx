@@ -32,7 +32,10 @@ function Integrations(props) {
   ]
 
  const selectItem = async (event, item) => {
-  if (!(event.target instanceof HTMLSelectElement)) {
+  if (event.target instanceof HTMLDivElement ||
+      event.target instanceof HTMLImageElement || 
+      event.target instanceof HTMLHeadingElement ||
+      event.target instanceof HTMLParagraphElement) {
     if( item?.type === selected?.type) {
        setSelected(null);
     } else {
